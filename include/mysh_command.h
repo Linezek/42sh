@@ -1,0 +1,32 @@
+/*
+** mysh_command.h for minishell in /home/boitea_r
+** 
+** Made by Ronan Boiteau
+** Login   <boitea_r@epitech.net>
+** 
+** Started on  Thu Jan 14 23:09:42 2016 Ronan Boiteau
+** Last update Sun Jun  5 23:29:47 2016 Ronan Boiteau
+*/
+
+#ifndef MYSH_COMMAND_H_
+# define MYSH_COMMAND_H_
+
+typedef struct	s_command
+{
+  char		**argv;
+  char		**argv_tmp;
+  char		**pipe_sub;
+  char		interactive;
+  int		stop;
+  unsigned char	last_ret;
+}		t_command;
+
+typedef struct	s_subcommand
+{
+  int		builtin_found;
+  int		fd;
+  int		pid;
+  t_uchar	ret;
+}		t_subcommand;
+
+#endif /* !MYSH_COMMAND_H_ */
